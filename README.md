@@ -10,7 +10,7 @@ PhoneShelf is the product name selected by the owner on 26 October 2026. Earlier
 
 - [Current product plan and hardware-check roadmap](docs/PRODUCT-PLAN.md)
 - [Hardware and diagnostics research, 26 October 2026](research/2026-10-26/HARDWARE-RESEARCH.md)
-- [License recommendation and pending decision](docs/LICENSING.md)
+- [License and ownership decision](docs/LICENSING.md)
 - [Original implementation backlog](planning/v0.3-2026-10-23/IMPLEMENTATION-BACKLOG.md)
 - [Interactive design reference: synthetic data](planning/v0.3-2026-10-23/design/PROTOTYPE.html)
 - [Current checkpoint](docs/checkpoints/2026-10-26-phoneshelf-foundation.md)
@@ -27,7 +27,7 @@ A reported identifier or successful camera test does not certify every component
 
 All official local features are intended to remain free, without export, device-count or time paywalls. Local workflows require no cloud account or external AI service.
 
-The proposed software license is **GPL-3.0-only**, pending the owner's decision. This proposal is not an active license grant. See [the comparison](docs/LICENSING.md) and [proposed unmodified GPL text](docs/licensing/GPL-3.0.proposed.txt). Third-party material retains its own terms.
+Original PhoneShelf material is licensed under **GPL-3.0-only**. Copyright (C) 2026 RaNDoM6913 and contributors. See [LICENSE](LICENSE), [NOTICE](NOTICE) and [the license decision](docs/LICENSING.md). Third-party material retains its own terms.
 
 ## Historical material
 

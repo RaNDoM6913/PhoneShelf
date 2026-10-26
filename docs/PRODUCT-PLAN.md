@@ -5,7 +5,7 @@
 ## Owner decisions and desired outcome
 
 - Public product name: **PhoneShelf**.
-- Public GitHub repository requested; GPL-3.0-only is the [recommended license](LICENSING.md), awaiting selection.
+- Public GitHub repository requested; **GPL-3.0-only** selected and applied. See [the ownership/license decision](LICENSING.md).
 - Official shipped features remain fully free, local-first and open source.
 - Collect as much supported information as possible about a specific iPhone, components, manufacturers and functional condition.
 

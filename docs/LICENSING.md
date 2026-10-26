@@ -1,8 +1,8 @@
 # PhoneShelf licensing decision
 
-2026-10-26. **Status: recommendation awaiting owner selection.** This document does not apply a project license.
+2026-10-26. **Status: selected by the owner and applied.** Original PhoneShelf material is licensed under GPL-3.0-only; see root [LICENSE](../LICENSE) and [NOTICE](../NOTICE).
 
-## Recommendation
+## Selected license
 
 Use **GNU GPL version 3 only**, SPDX identifier `GPL-3.0-only`, for original PhoneShelf software and accompanying original documentation. It matches the goal of a public free project whose distributed covered derivatives remain open and preserve copyright/license notices.
 
@@ -22,11 +22,11 @@ Sources: [GNU GPL FAQ](https://www.gnu.org/licenses/gpl-faq.en.html), [GPLv3 tex
 
 The official PhoneShelf distribution can remain free under either license. Neither prevents others from charging for a permitted copy. A noncommercial-only restriction would change the open-source objective. Software licensing does not automatically grant rights in a product name/logo; copyright attribution, trademarks and endorsement remain separate. No PhoneShelf trademark registration or legal name clearance is asserted.
 
-## Concrete proposed grant
+## Applied grant
 
-[licensing/GPL-3.0.proposed.txt](licensing/GPL-3.0.proposed.txt) contains unmodified GPLv3 text retrieved through GitHub's `licenses/gpl-3.0` API. The project notice determines whether later GPL versions are allowed. This recommendation is **version 3 only**.
+Root [LICENSE](../LICENSE) contains standard GPLv3 text retrieved through GitHub's `licenses/gpl-3.0` API, with its final newline normalized. The project [NOTICE](../NOTICE) selects **version 3 only**; later versions are not automatically included.
 
-If selected, put that text in root `LICENSE` and accompany original material with:
+Original material is accompanied by this notice:
 
 ```text
 PhoneShelf
@@ -55,4 +55,4 @@ An optional iOS companion is a separate future deliverable. Review its distribut
 
 ## Publication
 
-The owner requests a public GitHub repository. Prepare/review the contents, resolve the material license choice, then apply it and publish. A public repository without a selected license is not a completed open-source release. [GitHub licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
+The owner requested a public GitHub repository and selected GPL-3.0-only after reviewing the comparison. The license/notice are applied before publication. Public source availability remains separate from an application release or device-compatibility acceptance. [GitHub licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
