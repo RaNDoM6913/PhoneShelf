@@ -1,0 +1,231 @@
+{
+  "scope": "Rendered synthetic HTML prototype; not native app screenshots or device tests",
+  "status": "passed",
+  "screenshots": [
+    {
+      "file": "01-overview.png",
+      "route": "overview",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "A clearer view of your iPhone",
+      "contentHeight": 917
+    },
+    {
+      "file": "02-apps.png",
+      "route": "apps",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Every app, in context",
+      "contentHeight": 803
+    },
+    {
+      "file": "03-storage.png",
+      "route": "storage",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Follow the bytes",
+      "contentHeight": 862
+    },
+    {
+      "file": "04-documents.png",
+      "route": "documents",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Documents you can actually reach",
+      "contentHeight": 698
+    },
+    {
+      "file": "05-media.png",
+      "route": "media",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Photos, video and their resources",
+      "contentHeight": 659
+    },
+    {
+      "file": "06-backups.png",
+      "route": "backups",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Your backups, without a connected phone",
+      "contentHeight": 752
+    },
+    {
+      "file": "07-explorer.png",
+      "route": "explorer",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Nothing hidden behind a decoder",
+      "contentHeight": 793
+    },
+    {
+      "file": "08-messages.png",
+      "route": "messages",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Messages with their source attached",
+      "contentHeight": 689
+    },
+    {
+      "file": "09-contacts.png",
+      "route": "contacts",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "A useful record, with provenance",
+      "contentHeight": 548
+    },
+    {
+      "file": "10-privacy.png",
+      "route": "privacy",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Privacy, without guesswork",
+      "contentHeight": 917
+    },
+    {
+      "file": "11-timeline.png",
+      "route": "timeline",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "What changed — and what it means",
+      "contentHeight": 667
+    },
+    {
+      "file": "12-battery.png",
+      "route": "battery",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Useful measurements, honest limits",
+      "contentHeight": 743
+    },
+    {
+      "file": "13-transfer.png",
+      "route": "transfer",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Prepare a transfer with evidence",
+      "contentHeight": 752
+    },
+    {
+      "file": "14-toolbox.png",
+      "route": "toolbox",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "A broad toolbox, with clear status",
+      "contentHeight": 770
+    },
+    {
+      "file": "15-operations.png",
+      "route": "operations",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Review before anything moves",
+      "contentHeight": 713
+    },
+    {
+      "file": "16-settings.png",
+      "route": "settings",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Your workspace, your choices",
+      "contentHeight": 746
+    },
+    {
+      "file": "17-apps-dark.png",
+      "route": "apps",
+      "query": "theme=dark&mode=advanced",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Every app, in context",
+      "contentHeight": 803
+    },
+    {
+      "file": "18-explorer-dark.png",
+      "route": "explorer",
+      "query": "theme=dark&mode=advanced",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Nothing hidden behind a decoder",
+      "contentHeight": 793
+    },
+    {
+      "file": "19-source-inspector.png",
+      "route": "apps",
+      "query": "mode=advanced",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Every app, in context",
+      "contentHeight": 803
+    },
+    {
+      "file": "20-export-review.png",
+      "route": "documents",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Review before anything moves",
+      "contentHeight": 713
+    },
+    {
+      "file": "21-disconnected.png",
+      "route": "documents",
+      "query": "state=disconnected",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Documents you can actually reach",
+      "contentHeight": 777
+    },
+    {
+      "file": "22-password-required.png",
+      "route": "backups",
+      "query": "",
+      "width": 1536,
+      "height": 1024,
+      "documentWidth": 1536,
+      "routeTitle": "Your backups, without a connected phone",
+      "contentHeight": 752
+    }
+  ],
+  "checks": {
+    "javascriptErrors": [],
+    "externalRequests": [],
+    "viewport1280Fits": true
+  }
+}

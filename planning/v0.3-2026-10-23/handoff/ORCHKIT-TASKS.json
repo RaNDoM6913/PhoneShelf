@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "plan_revision": "iphone-atlas-v03-first-slice-20261023",
+  "tasks": [
+    {
+      "id": "ATLAS-A00",
+      "goal": "Reconcile the current repository, toolchain, original protected files and writer state; write docs/implementation/ADMISSION.md with the actual first-slice build paths, executable checks, native-UI feasibility and next bounded task. Acceptance: original files preserved, no competing writer, concrete commands and limits recorded. No device/account access, toolchain installation or publication. Re-admit later automation against these real checks before running coding tasks.",
+      "allowed_paths": [
+        "docs/implementation/ADMISSION.md",
+        "docs/checkpoints/ATLAS-A00.md"
+      ],
+      "dependencies": [],
+      "risk_tags": [],
+      "max_attempts": 2
+    },
+    {
+      "id": "ATLAS-A01",
+      "goal": "Implement AppDomain contracts and the smallest buildable shell/CLI foundation described by backlog A01. Acceptance: actual local build, explicit synthetic/source state, independent domain types; native UI only where verified toolchain supports it, otherwise CLI readiness recorded. Do not scaffold future transports or empty packages.",
+      "allowed_paths": [
+        "Package.swift",
+        "Package.resolved",
+        ".gitignore",
+        "packages/AppDomain",
+        "apps/macOS",
+        "tools/atlas-cli",
+        "docs/checkpoints/ATLAS-A01.md"
+      ],
+      "dependencies": [
+        "ATLAS-A00"
+      ],
+      "risk_tags": [
+        "architecture"
+      ],
+      "max_attempts": 2
+    },
+    {
+      "id": "ATLAS-A02",
+      "goal": "Implement a deterministic synthetic backup generator and expected content manifest for backlog A02. Acceptance: valid small manifest and metadata, plist/SQLite/text/unknown examples, Unicode path and missing payload, repeatable expected hashes. No personal sources or proprietary assets.",
+      "allowed_paths": [
+        "tests/fixtures/synthetic",
+        "tools/fixtures",
+        "docs/checkpoints/ATLAS-A02.md"
+      ],
+      "dependencies": [
+        "ATLAS-A01"
+      ],
+      "risk_tags": [
+        "data_integrity"
+      ],
+      "max_attempts": 2
+    },
+    {
+      "id": "ATLAS-B01A",
+      "goal": "Implement fixture BackupCore enumeration and bounded inspection. Acceptance: all manifest rows visible, correct source revision/time and entry kind, missing payload distinct from unknown format, read-only text/hex preview and meaningful path-isolation/source-preservation checks. No USB or encrypted/semantic completeness claims.",
+      "allowed_paths": [
+        "Package.swift",
+        "Package.resolved",
+        "packages/BackupCore",
+        "packages/AppDomain",
+        "apps/macOS",
+        "tools/atlas-cli",
+        "tests/BackupCoreTests",
+        "docs/checkpoints/ATLAS-B01A.md"
+      ],
+      "dependencies": [
+        "ATLAS-A02"
+      ],
+      "risk_tags": [
+        "data_integrity",
+        "filesystem"
+      ],
+      "max_attempts": 2
+    },
+    {
+      "id": "ATLAS-O01A",
+      "goal": "Implement exact-selection raw export with source/destination isolation, collision policy and JSON receipts. Acceptance: source unchanged, copied bytes/length verified, per-item missing/error/cancellation results preserved, repeatable CLI or native demo. No phone-space-saved claim or device writes.",
+      "allowed_paths": [
+        "Package.swift",
+        "Package.resolved",
+        "packages/ExportKit",
+        "packages/Operations",
+        "packages/AppDomain",
+        "apps/macOS",
+        "tools/atlas-cli",
+        "tests/ExportKitTests",
+        "docs/checkpoints/ATLAS-O01A.md"
+      ],
+      "dependencies": [
+        "ATLAS-B01A"
+      ],
+      "risk_tags": [
+        "data_integrity",
+        "filesystem"
+      ],
+      "max_attempts": 2
+    },
+    {
+      "id": "ATLAS-A03",
+      "goal": "Integrate and demonstrate synthetic fixture -> catalogue -> inspection -> export -> verified receipt with the actual available toolchain. Acceptance: exact build/run/check commands, source/output integrity evidence, one complete usable path, concise limitations and next task; native UI/bundle gate remains open if unverified. No product release or real device compatibility claim.",
+      "allowed_paths": [
+        "apps/macOS",
+        "tools/atlas-cli",
+        "tests/IntegrationTests",
+        "docs/implementation",
+        "docs/checkpoints/ATLAS-A03.md"
+      ],
+      "dependencies": [
+        "ATLAS-O01A"
+      ],
+      "risk_tags": [
+        "integration"
+      ],
+      "max_attempts": 2
+    }
+  ]
+}

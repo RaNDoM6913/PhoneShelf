@@ -1,0 +1,3931 @@
+{
+  "schema_version": "1.0",
+  "planning_version": "0.3",
+  "as_of": "2026-10-23",
+  "language": "en",
+  "scope_statement": "80 feature families for an expanded free/open-source iPhone Atlas roadmap. A bounded primary-source landscape, not an exhaustive benchmark or complete parity claim.",
+  "product_implementation_status": "planning_only",
+  "compatibility_statement": "No competitor was installed or benchmarked and no physical iPhone test was performed for this matrix. Source-documented availability is not Atlas support.",
+  "phases": {
+    "P0": "Proof work, fixture vertical slice, capability experiments and schema contracts; not public feature completion.",
+    "P1": "First full read-only beta: device/apps, File Sharing reads, unencrypted and known-password encrypted backups, generic viewers, Messages/Contacts and verified exports.",
+    "P2": "Richer decoders/imports, media organization, comparable history and evidence-driven analysis.",
+    "P3": "Separately validated writes, backup creation, scheduling and reversible host workflows.",
+    "P4": "Conditional companion, account, developer, managed-device and recovery/firmware lanes.",
+    "PARKED": "Desired capability recorded; no justified universal route or unsuitable promise. Preserve supported user handoffs where possible."
+  },
+  "gates": {
+    "G-FIXTURE": "Versioned synthetic fixtures; bounded parsing; malformed/partial inputs; immutable source; measurable coverage.",
+    "G-LIVE": "Pinned adapter and an explicitly selected, authorized test device; model/iOS/build/transport matrix; denied, locked, disconnect and missing-field outcomes.",
+    "G-EXPORT": "Exact selection, resource grouping, destination-space/conflict handling, verified bytes or meaningful record counts, provenance and per-item receipt.",
+    "G-WRITE": "Per-operation capability proof and exact target; preflight and preview; explicit action confirmation; interruption semantics; no blind retry; postcondition verification.",
+    "G-CRYPTO": "Known user-supplied password; reviewed cryptographic implementation and test vectors; no password logs; bounded attempts and plaintext lifetime; wrong-password state.",
+    "G-ACCOUNT": "Supported account interface, access approval where needed, user consent and scoped tokens; no automatic credential or identifier upload.",
+    "G-COMPANION": "Separate signed iPhone app, entitlements, distribution and regional eligibility; revocation, stale data and production-device tests.",
+    "G-RECOVERY": "Sacrificial authorized device and recovery procedure; model/build/signing preflight; refusal of silent erase fallback; independently verified backup and restore results.",
+    "G-MANUAL": "User-supplied evidence with source/date; never overwrite measured values or imply automated validation.",
+    "G-NO-ROUTE": "Keep recorded as desired but unavailable; no runnable control or success simulation until a justified route and revised gate exist.",
+    "G-OSS": "Pinned dependencies, redistribution obligations and notices reviewed; fixture rights; reproducible build, accessibility and offline behavior checked.",
+    "G-REVIEW": "Versioned interpretation and source coverage; distinguish observation, inference, uncertainty and user notes; no unqualified diagnostic verdict."
+  },
+  "sources": [
+    {
+      "id": "C01",
+      "owner": "iMazing",
+      "title": "Device overview",
+      "url": "https://imazing.com/guides/device-overview-in-imazing",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; fields are vendor documented, not independently tested."
+    },
+    {
+      "id": "C02",
+      "owner": "iMazing",
+      "title": "Backup features",
+      "url": "https://imazing.com/backup-iphone-ipad",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; scheduling, snapshots and location claims. Do not repeat its exclusivity claim."
+    },
+    {
+      "id": "C03",
+      "owner": "iMazing",
+      "title": "Photos",
+      "url": "https://imazing.com/iphone-photos-transfer",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; export, metadata, resource groups, write/delete and conversion claims."
+    },
+    {
+      "id": "C04",
+      "owner": "iMazing",
+      "title": "Music",
+      "url": "https://imazing.com/iphone-music-transfer",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; music transfer product page, not proof of an Atlas protocol."
+    },
+    {
+      "id": "C05",
+      "owner": "iMazing",
+      "title": "App management guide",
+      "url": "https://imazing.com/guides/how-to-manage-apps-without-itunes",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Guide updated 2026-06-17; local app library and install/update/uninstall workflows."
+    },
+    {
+      "id": "C06",
+      "owner": "iMazing",
+      "title": "iOS management",
+      "url": "https://imazing.com/ios-management",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; advanced operations, backups, raw data and developer/jailbreak qualifications."
+    },
+    {
+      "id": "C07",
+      "owner": "iMazing",
+      "title": "Spyware Analyzer",
+      "url": "https://imazing.com/spyware-analyzer",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; indicator analysis, false positives, no removal guarantee."
+    },
+    {
+      "id": "C08",
+      "owner": "iMazing",
+      "title": "Product and category directory",
+      "url": "https://imazing.com/",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; named categories, CLI and managed-device product families."
+    },
+    {
+      "id": "C09",
+      "owner": "3uTools",
+      "title": "Product and toolbox directory",
+      "url": "https://www.3u.com/productsWin",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass. Lists Mac Intel/Apple Silicon downloads. Per-platform feature equality was not established."
+    },
+    {
+      "id": "C10",
+      "owner": "coconutBattery",
+      "title": "Product features and FAQ",
+      "url": "https://www.coconut-flavour.com/coconutbattery/",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; available advanced details vary by device. Mac SSD claims do not establish iPhone SSD statistics."
+    },
+    {
+      "id": "C11",
+      "owner": "iExplorer",
+      "title": "Product page",
+      "url": "https://macroplant.com/iexplorer",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; deeper AFC2 access expressly refers to jailbroken devices."
+    },
+    {
+      "id": "C12",
+      "owner": "AnyTrans",
+      "title": "Product directory",
+      "url": "https://www.imobie.com/anytrans/",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; category and transfer claims, not a compatibility benchmark."
+    },
+    {
+      "id": "C13",
+      "owner": "AnyTrans",
+      "title": "Screen mirroring, recording and capture",
+      "url": "https://www.imobie.com/anytrans/mirror-record-capture-iphone-screen.htm",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; later format/edit sections visibly say coming soon. Do not mark those shipped."
+    },
+    {
+      "id": "C14",
+      "owner": "AnyTrans",
+      "title": "iPhone migration",
+      "url": "https://www.imobie.com/anytrans/clone-iphone.htm",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; selective transfer and preservation claims remain vendor assertions."
+    },
+    {
+      "id": "C15",
+      "owner": "AnyTrans",
+      "title": "Android migration",
+      "url": "https://www.imobie.com/anytrans/move-android-to-iphone.htm",
+      "evidence_type": "vendor_claim",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; page contains an explicit iOS 13 call-log/reminder/Safari write limitation. Do not generalize broad headlines."
+    },
+    {
+      "id": "C16",
+      "owner": "Reincubate",
+      "title": "iPhone Backup Extractor and FAQ",
+      "url": "https://reincubate.com/iphone-backup-extractor/",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; encrypted extraction requires password; FAQ says iCloud backup download unavailable since May 2020, distinct from live iCloud content."
+    },
+    {
+      "id": "C17",
+      "owner": "Finder / Apple Devices",
+      "title": "Locate and manage backups",
+      "url": "https://support.apple.com/en-us/108809",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; archive, locate and delete local backups."
+    },
+    {
+      "id": "C18",
+      "owner": "Finder",
+      "title": "Content synchronization",
+      "url": "https://support.apple.com/en-us/102471",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; supported content synchronization, not a third-party integration API."
+    },
+    {
+      "id": "T01",
+      "owner": "Apple",
+      "title": "File Sharing",
+      "url": "https://support.apple.com/en-us/119585",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from the same-day APPLICATIONS-RESEARCH source register; eligible apps only."
+    },
+    {
+      "id": "T02",
+      "owner": "Apple",
+      "title": "Backup methods and exclusions",
+      "url": "https://support.apple.com/en-us/108771",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from the same-day research; a backup is not every byte of the device."
+    },
+    {
+      "id": "T03",
+      "owner": "Apple",
+      "title": "Encrypted backups",
+      "url": "https://support.apple.com/en-us/108353",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from the same-day research; distinguish backup encryption and app-internal encryption."
+    },
+    {
+      "id": "T04",
+      "owner": "libimobiledevice",
+      "title": "ideviceinstaller manual",
+      "url": "https://github.com/libimobiledevice/ideviceinstaller/blob/master/man/ideviceinstaller.1",
+      "evidence_type": "upstream_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass and prior research; commands and attributes. Legacy app archive/restore is not functional on iOS 7+."
+    },
+    {
+      "id": "T05",
+      "owner": "libimobiledevice",
+      "title": "Lockdown API",
+      "url": "https://libimobiledevice.org/docs/libimobiledevice/latest/lockdown_8h.html",
+      "evidence_type": "upstream_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; field availability requires exact-device tests."
+    },
+    {
+      "id": "T06",
+      "owner": "libimobiledevice",
+      "title": "Diagnostics Relay API",
+      "url": "https://libimobiledevice.org/docs/libimobiledevice/latest/diagnostics__relay_8h.html",
+      "evidence_type": "upstream_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; operations are not a universal set of battery semantics."
+    },
+    {
+      "id": "T07",
+      "owner": "libimobiledevice",
+      "title": "idevicerestore README",
+      "url": "https://github.com/libimobiledevice/idevicerestore",
+      "evidence_type": "upstream_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; signed firmware constraints; update can become erase when the archive lacks an upgrade variant."
+    },
+    {
+      "id": "T08",
+      "owner": "Apple",
+      "title": "Update and restore recovery guidance",
+      "url": "https://support.apple.com/en-us/118106",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; user-guided supported recovery route."
+    },
+    {
+      "id": "T09",
+      "owner": "Apple",
+      "title": "QuickTime device screen capture",
+      "url": "https://support.apple.com/guide/quicktime-player/record-a-movie-qtp356b55534/mac",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Opened this pass; connected device display can be recorded. Not a control API."
+    },
+    {
+      "id": "T10",
+      "owner": "Apple",
+      "title": "iPhone Mirroring",
+      "url": "https://support.apple.com/en-us/120421",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from same-day research; account, hardware, OS and regional requirements; not an embeddable Atlas control API."
+    },
+    {
+      "id": "T11",
+      "owner": "Apple",
+      "title": "App Privacy Report",
+      "url": "https://support.apple.com/en-us/102188",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from APPLICATIONS-RESEARCH; recent enabled-report coverage and private-browser exclusions."
+    },
+    {
+      "id": "T12",
+      "owner": "Apple",
+      "title": "Inspecting app activity data",
+      "url": "https://developer.apple.com/documentation/Network/inspecting-app-activity-data?changes=_6_5",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from indexed official documentation in same-day research; NDJSON access/network records."
+    },
+    {
+      "id": "T13",
+      "owner": "Apple",
+      "title": "Family Controls data access",
+      "url": "https://developer.apple.com/documentation/FamilyControls/AuthorizationStatus/approvedWithDataAccess?changes=__3",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from same-day research; EU customer requirements, new entitlement and iOS 26.4+ path. Recheck at implementation."
+    },
+    {
+      "id": "T14",
+      "owner": "Apple",
+      "title": "Account Data Transfer API access",
+      "url": "https://developer.apple.com/support/account-data-transfer-api/",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from same-day research; approval, consent and region-specific scope, distinct from device-local collection."
+    },
+    {
+      "id": "T15",
+      "owner": "Telegram",
+      "title": "Official account export",
+      "url": "https://telegram.org/blog/export-and-more",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from same-day research; account exports via Telegram Desktop, not a current iPhone cache clone."
+    },
+    {
+      "id": "T16",
+      "owner": "Meta",
+      "title": "Information export via Accounts Center",
+      "url": "https://about.fb.com/news/2023/10/manage-your-information-across-apps/",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from same-day research; selected account data, not all local drafts or cache."
+    },
+    {
+      "id": "T17",
+      "owner": "Apple",
+      "title": "Parts and Service History",
+      "url": "https://support.apple.com/en-us/102658",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; official UI is not proof of ordinary-USB access."
+    },
+    {
+      "id": "T18",
+      "owner": "Apple",
+      "title": "Battery information",
+      "url": "https://support.apple.com/en-us/106348",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; official Battery Health must not be relabelled from undocumented raw ratios."
+    },
+    {
+      "id": "T19",
+      "owner": "Apple",
+      "title": "Device information queries for management",
+      "url": "https://support.apple.com/guide/deployment/device-information-queries-depa9e8e14a4/web",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; enrollment-dependent channel, not ordinary consumer USB."
+    },
+    {
+      "id": "T20",
+      "owner": "pymobiledevice3",
+      "title": "iOS 17+ developer-service tunnels",
+      "url": "https://doronz88.github.io/pymobiledevice3/guides/ios17-tunnels/",
+      "evidence_type": "upstream_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; separate developer-service path, no blanket root/tunnel claim."
+    },
+    {
+      "id": "T21",
+      "owner": "Apple",
+      "title": "ImageCaptureCore",
+      "url": "https://developer.apple.com/documentation/imagecapturecore",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; selected native media route still needs capability probes."
+    },
+    {
+      "id": "T22",
+      "owner": "Apple",
+      "title": "iOS runtime process security",
+      "url": "https://support.apple.com/guide/security/security-of-runtime-process-sec15bfe098e/web",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; app sandbox boundaries."
+    },
+    {
+      "id": "T23",
+      "owner": "Apple",
+      "title": "Storage categories",
+      "url": "https://support.apple.com/en-us/108429",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from research; Settings and Finder can categorize storage differently."
+    },
+    {
+      "id": "T24",
+      "owner": "iMazing",
+      "title": "WhatsApp transfer guide",
+      "url": "https://imazing.com/guides/how-to-transfer-whatsapp-from-one-iphone-to-another",
+      "evidence_type": "vendor_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from APPLICATIONS-RESEARCH; target app removal appears in the vendor workflow; not a public universal restore API."
+    },
+    {
+      "id": "T25",
+      "owner": "Apple",
+      "title": "Diagnostics mode",
+      "url": "https://support.apple.com/en-us/101944",
+      "evidence_type": "apple_documentation",
+      "reviewed_at": "2026-10-23",
+      "retrieval_note": "Retained from DEVICE-RESEARCH; user workflow, not an Atlas automation API."
+    }
+  ],
+  "features": [
+    {
+      "id": "DEV-01",
+      "category": "Device",
+      "title": "Device Passport and raw identity",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T05"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Native lockdown; typed observations and raw-key viewer.",
+      "boundary": "Only returned fields; model facts are separate; unique identifiers masked in shared reports.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Correct selected-device identity, timestamp and missing-key state; unknown keys survive normalization.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "C09",
+        "C10",
+        "T05"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DEV-02",
+      "category": "Device",
+      "title": "Connection and trust diagnostics",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T05"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "USB discovery and explicit pairing/session state machine.",
+      "boundary": "Accessory approval, trust pairing, unlocked state and service access are distinct.",
+      "gate_ids": [
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Locked, untrusted, denied, disconnected and multiple-device fixtures produce distinct actionable states.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "T05"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DEV-03",
+      "category": "Device",
+      "title": "Storage overview and source-specific categories",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T23"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Validated device storage observations and accessible file totals.",
+      "boundary": "Unknown residual is not cache; Settings/Finder categories need not match.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Total/free observations retain units and scope; no invented category or reconciliation balancing figure.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "T23"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DEV-04",
+      "category": "Device",
+      "title": "Charge level and charging state",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T05",
+        "T18"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Returned battery-domain values.",
+      "boundary": "Charge percentage is different from capacity health; omissions are not zero.",
+      "gate_ids": [
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Charging/unplugged snapshots preserve source and units; unsupported fields stay unavailable.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "C10",
+        "T05",
+        "T18"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DEV-05",
+      "category": "Device",
+      "title": "Battery detail, lifetime readings and history",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "coconutBattery documents battery/lifetime views with device-dependent availability; this does not establish all fields for every iPhone."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "coconutBattery documents battery/lifetime views with device-dependent availability; this does not establish all fields for every iPhone."
+        }
+      ],
+      "technical_source_ids": [
+        "T06",
+        "T18"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Validated diagnostics fields plus persisted observations.",
+      "boundary": "Cycles, temperature, capacity and lifetime statistics are device-dependent; raw ratios are not Apple Battery Health.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Each field has a validated meaning/unit; component replacement breaks the series; stale and unavailable states visible.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "C10",
+        "T06",
+        "T18"
+      ],
+      "competitive_scope_note": "coconutBattery documents battery/lifetime views with device-dependent availability; this does not establish all fields for every iPhone."
+    },
+    {
+      "id": "DEV-06",
+      "category": "Device",
+      "title": "Model specifications and hardware catalog",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "iMazing documents device details. A separately sourced offline model-specification catalog is an Atlas proposal."
+        }
+      ],
+      "technical_source_ids": [
+        "T05"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned offline model catalog linked to raw identifier.",
+      "boundary": "Catalog specifications are not measured values; no serial-number manufacturing-date guess.",
+      "gate_ids": [
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Unknown models remain usable; catalog entry has source/version and is labelled as reference data.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "T05"
+      ],
+      "competitive_scope_note": "iMazing documents device details. A separately sourced offline model-specification catalog is an Atlas proposal."
+    },
+    {
+      "id": "DEV-07",
+      "category": "Device",
+      "title": "Repair, parts and warranty evidence",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "iMazing documents support-coverage checks and 3uTools advertises verification reports; Atlas manual evidence is a deliberately narrower proposed route."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents support-coverage checks and 3uTools advertises verification reports; Atlas manual evidence is a deliberately narrower proposed route."
+        }
+      ],
+      "technical_source_ids": [
+        "T17"
+      ],
+      "evidence_basis": "manual_route",
+      "candidate_route": "User-supplied Settings evidence and explicit official-service handoff.",
+      "boundary": "No established universal consumer-USB coverage/parts API; no automatic serial upload or authenticity certificate.",
+      "gate_ids": [
+        "G-MANUAL",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "User evidence is dated and editable separately; unresolved conflicts remain visible.",
+      "operation_class": "read",
+      "fallback": "Open the relevant Apple Settings/help or coverage workflow deliberately.",
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "C09",
+        "T17"
+      ],
+      "competitive_scope_note": "iMazing documents support-coverage checks and 3uTools advertises verification reports; Atlas manual evidence is a deliberately narrower proposed route."
+    },
+    {
+      "id": "DEV-08",
+      "category": "Device",
+      "title": "Guided hardware checks and service reports",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "3uTools advertises hardware checks; coconutBattery documents report templates, not the complete hardware-test checklist proposed here."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "3uTools advertises hardware checks; coconutBattery documents report templates, not the complete hardware-test checklist proposed here."
+        }
+      ],
+      "technical_source_ids": [
+        "T25"
+      ],
+      "evidence_basis": "manual_route",
+      "candidate_route": "User-operated screen, touch, camera, audio and Face ID checklist; report template.",
+      "boundary": "Checklist outcomes do not establish every component is original or fault-free.",
+      "gate_ids": [
+        "G-MANUAL",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Report lists performed, skipped and unavailable checks, their dates and who supplied them.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "C10",
+        "T25"
+      ],
+      "competitive_scope_note": "3uTools advertises hardware checks; coconutBattery documents report templates, not the complete hardware-test checklist proposed here."
+    },
+    {
+      "id": "DEV-09",
+      "category": "Device",
+      "title": "Crash reports and bounded system logs",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "iMazing documents console/log handling; 3uTools lists real-time logs and crash analysis. Acquisition side effects require separate upstream inspection."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents console/log handling; 3uTools lists real-time logs and crash analysis. Acquisition side effects require separate upstream inspection."
+        }
+      ],
+      "technical_source_ids": [
+        "T05"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Allowlisted read/export of available reports; separate live-console research.",
+      "boundary": "Some collection tools flush/move/delete; keep-preserving export is not automatically zero device-side change.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Pinned acquisition code has explicit side effects; filenames/process/time parsed; originals retained and export accounted for.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T05"
+      ],
+      "competitive_scope_note": "iMazing documents console/log handling; 3uTools lists real-time logs and crash analysis. Acquisition side effects require separate upstream inspection."
+    },
+    {
+      "id": "DEV-10",
+      "category": "Device",
+      "title": "Profile and management-state inspection",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T19"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Read-only permitted profile service and management hints.",
+      "boundary": "MDM inventory requires enrollment; no enrollment or profile installation during inspection.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Scope and access denial shown; inventory does not become a claim that every policy is known.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T19"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DEV-11",
+      "category": "Device",
+      "title": "Wi-Fi sessions and multiple-device workspace",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T05"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Existing trust, supported network services, explicit device registry.",
+      "boundary": "Availability differs by service; offline phone is not continuously monitored.",
+      "gate_ids": [
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Two devices never cross-publish values; reconnect/backoff and stale samples are deterministic; USB fallback works.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C10",
+        "C12",
+        "T05"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-01",
+      "category": "Apps",
+      "title": "Installed-app inventory and version metadata",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Installation-proxy query through the native adapter.",
+      "boundary": "Inventory filters, placeholders and hidden entries affect scope; metadata path is not browse permission.",
+      "gate_ids": [
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Bundle/version/name and optional attributes retained with query filters; omissions represented explicitly.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C09",
+        "C12",
+        "T04"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-02",
+      "category": "Apps",
+      "title": "App dossier joining available sources",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Vendor app/file management overlaps individual inputs; the linked multi-source dossier is an Atlas design, not a claimed exact counterpart."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Vendor app/file management overlaps individual inputs; the linked multi-source dossier is an Atlas design, not a claimed exact counterpart."
+        }
+      ],
+      "technical_source_ids": [
+        "T01",
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "App identity linked to live metadata, documents, backup domains and later imports.",
+      "boundary": "Link confidence and source dates matter; shared app-group bytes must not be counted twice.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "One app exposes all linked source cards, unknown domains remain browsable and ambiguous links are marked.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C11",
+        "T01",
+        "T04"
+      ],
+      "competitive_scope_note": "Vendor app/file management overlaps individual inputs; the linked multi-source dossier is an Atlas design, not a claimed exact counterpart."
+    },
+    {
+      "id": "APP-03",
+      "category": "Apps",
+      "title": "Comparable app-size and version history",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C01",
+          "evidence_type": "vendor_documentation",
+          "scope": "iMazing documents current storage/device views; source-comparable per-app timeline behavior was not established by this review."
+        }
+      ],
+      "technical_source_ids": [
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Snapshot StaticDiskUsage/DynamicDiskUsage when validated; compare compatible scopes.",
+      "boundary": "Dynamic size is not cache; missing/offloaded/reinstalled entries cannot be treated as ordinary deltas.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Delta suppressed with a reason when device/source/filter/semantic version or installation state is incompatible.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C01",
+        "T04"
+      ],
+      "competitive_scope_note": "iMazing documents current storage/device views; source-comparable per-app timeline behavior was not established by this review."
+    },
+    {
+      "id": "APP-04",
+      "category": "Apps",
+      "title": "File Sharing document browse and export",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T01"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Documents-only HouseArrest/AFC access to participating apps.",
+      "boundary": "This is not the complete private app container.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Exact approved document scope, nested paths and partial failures produce verified per-file results.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "T01"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-05",
+      "category": "Apps",
+      "title": "Document import, rename and selected deletion",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T01"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Separately admitted File Sharing write operations.",
+      "boundary": "App consumption and sync can change files; export does not mean restorable app state.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Conflict policy, stable target identity, precondition and per-item postcondition are checked; no generic undo promise.",
+      "operation_class": "device_write",
+      "fallback": null,
+      "depends_on": [
+        "APP-04",
+        "PLUS-04"
+      ],
+      "source_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "T01"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-06",
+      "category": "Apps",
+      "title": "Install and upgrade authorized app packages",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Supported installation-proxy commands for compatible user-supplied packages.",
+      "boundary": "Signing, provisioning, ownership, OS compatibility and device policy still apply.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Reject wrong identity/invalid package before mutation; show install outcome and re-query installed version.",
+      "operation_class": "device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C09",
+        "C12",
+        "T04"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-07",
+      "category": "Apps",
+      "title": "Uninstall an explicitly selected app",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Supported uninstall command with data-loss preview.",
+      "boundary": "Removal can delete local documents/drafts; exported files do not guarantee full restoration.",
+      "gate_ids": [
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Exact app/device shown; preservation status explicit; current inventory checked again; result verified without retry loops.",
+      "operation_class": "destructive",
+      "fallback": null,
+      "depends_on": [
+        "APP-01",
+        "PLUS-04"
+      ],
+      "source_ids": [
+        "C05",
+        "C09",
+        "C12",
+        "T04"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-08",
+      "category": "Apps",
+      "title": "Local IPA library and optional Store metadata",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "iMazing documents local app-library workflows. 3uTools and AnyTrans advertise app distribution/management; Atlas will not infer a reusable authentication route."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents local app-library workflows. 3uTools and AnyTrans advertise app distribution/management; Atlas will not infer a reusable authentication route."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents local app-library workflows. 3uTools and AnyTrans advertise app distribution/management; Atlas will not infer a reusable authentication route."
+        }
+      ],
+      "technical_source_ids": [
+        "T04"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Hash and inspect user-owned package files; optional scoped catalog enrichment.",
+      "boundary": "App Store download/authentication route is separate and unproven for Atlas; storefront listing does not prove installability.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-ACCOUNT",
+        "G-OSS"
+      ],
+      "acceptance_criteria": "Library stores source/hash/version/signing metadata; no unauthorized download or successful-install claim.",
+      "operation_class": "host_write",
+      "fallback": "User imports a legitimately obtained package; official Store route remains available.",
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C09",
+        "C12",
+        "T04"
+      ],
+      "competitive_scope_note": "iMazing documents local app-library workflows. 3uTools and AnyTrans advertise app distribution/management; Atlas will not infer a reusable authentication route."
+    },
+    {
+      "id": "APP-09",
+      "category": "Apps",
+      "title": "Per-app data backup, restore and migration",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C05",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C14",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T04",
+        "T24"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Research supported app-specific export/restore contracts; preserve full-backup option.",
+      "boundary": "Legacy ideviceinstaller archive/restore is nonfunctional on iOS 7+; commercial workflows do not establish a universal API.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-RECOVERY"
+      ],
+      "acceptance_criteria": "Each app/schema/OS has a tested allowlist, target-loss preview and independent post-restore verification.",
+      "operation_class": "destructive",
+      "fallback": "Export accessible documents or restore through a supported official full-device workflow.",
+      "depends_on": [],
+      "source_ids": [
+        "C05",
+        "C06",
+        "C14",
+        "T04",
+        "T24"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "APP-10",
+      "category": "Apps",
+      "title": "Offload and app-specific cache guidance",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T23",
+        "T01"
+      ],
+      "evidence_basis": "manual_route",
+      "candidate_route": "Versioned instructions opening the app or Settings; record user-observed before/after values.",
+      "boundary": "Universal Mac offload/cache-clear API is not established; do not relabel DynamicDiskUsage as cache.",
+      "gate_ids": [
+        "G-MANUAL",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Guidance states local draft/data risks and what is actually measured; no automated clean-all button.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T23",
+        "T01"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-01",
+      "category": "Backups",
+      "title": "Discover and register local backup folders",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder / Apple Devices",
+          "source_id": "C17",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "User-selected folders and permitted standard backup locations.",
+      "boundary": "Do not scan unrelated personal folders or mutate source backups.",
+      "gate_ids": [
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Valid, missing, inaccessible and moved folders get distinct states; identity derives from metadata not folder name alone.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C11",
+        "C16",
+        "C17",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-02",
+      "category": "Backups",
+      "title": "Unencrypted backup manifest and complete raw catalog",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Read manifest records and map available payload files.",
+      "boundary": "Complete refers to the selected manifest, not every phone file; orphan/missing payloads stay visible.",
+      "gate_ids": [
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Every manifest entry is accounted for; malformed records and absent payloads are explicit, not silently dropped.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C11",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-03",
+      "category": "Backups",
+      "title": "Known-password encrypted backup inspection",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Reviewed keybag/key derivation and decryption of supported backup formats.",
+      "boundary": "Backup password is required; app-internal encryption and excluded cloud content remain separate.",
+      "gate_ids": [
+        "G-CRYPTO",
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Correct/wrong password, corrupt metadata and partial payload fixtures pass; source untouched and plaintext cleanup verified.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C16",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-04",
+      "category": "Backups",
+      "title": "Generic SQLite, plist, text, hex and media viewers",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Bounded isolated parsers operating on read-only source or controlled working copy.",
+      "boundary": "Unknown files remain exportable; preview is not execution; SQLite extensions and arbitrary code disabled.",
+      "gate_ids": [
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Large/corrupt/unrecognized files remain safely navigable; parser timeout does not crash the whole app.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-05",
+      "category": "Backups",
+      "title": "Snapshot and file comparison",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents retained snapshots; the proposed manifest/record diff is not claimed to be an exact vendor feature."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Manifest metadata/hash comparison and schema-aware record diff where supported.",
+      "boundary": "Source absence does not prove deletion; same filename need not mean unchanged content.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Compatible snapshots show added/changed/unavailable with evidence; bytes and decoded-record differences remain separate.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "T02"
+      ],
+      "competitive_scope_note": "iMazing documents retained snapshots; the proposed manifest/record diff is not claimed to be an exact vendor feature."
+    },
+    {
+      "id": "BK-06",
+      "category": "Backups",
+      "title": "Integrity checking and partial/corrupt backup salvage",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Bounded best-effort readable-payload inventory and explicit anomaly report.",
+      "boundary": "No guarantee of deleted-data recovery or reconstruction of unavailable encrypted bytes.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Known damaged fixtures retain recoverable files without inventing records; every anomaly and recovered selection is labelled.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-07",
+      "category": "Backups",
+      "title": "Create a full local backup",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder / Apple Devices",
+          "source_id": "C17",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Pinned mobilebackup2 path or explicit Apple-tool handoff until admitted.",
+      "boundary": "Backup exclusions remain; encryption setup is a separate device-changing action.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-LIVE",
+        "G-CRYPTO"
+      ],
+      "acceptance_criteria": "Interrupted sessions remain incomplete; finished backup validates structurally and can be opened independently.",
+      "operation_class": "device_session_and_host_write",
+      "fallback": "Create an encrypted Finder/Apple Devices backup, then open its selected local folder.",
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C09",
+        "C12",
+        "C16",
+        "C17",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-08",
+      "category": "Backups",
+      "title": "Incremental backup versions, archives and retention",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder / Apple Devices",
+          "source_id": "C17",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned host backup store with immutable completed snapshots.",
+      "boundary": "Incremental reuse is not corruption detection; cleanup must not erase the only viable snapshot.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Interrupted update cannot damage a completed snapshot; retention previews exact host files and excludes protected versions.",
+      "operation_class": "host_write",
+      "fallback": null,
+      "depends_on": [
+        "BK-07"
+      ],
+      "source_ids": [
+        "C02",
+        "C12",
+        "C17",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-09",
+      "category": "Backups",
+      "title": "Scheduled backup, custom locations and NAS",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents scheduling and external/NAS locations; AnyTrans advertises automatic wireless backups. Specific NAS behavior for AnyTrans was not established."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing documents scheduling and external/NAS locations; AnyTrans advertises automatic wireless backups. Specific NAS behavior for AnyTrans was not established."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "User-created local scheduler with USB/Wi-Fi readiness and storage policies.",
+      "boundary": "No wake/lock/network guarantee; network share failure must not create a successful-backup badge.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Missed schedule, locked device, disconnected volume, quota and resume produce explicit results and safe retry rules.",
+      "operation_class": "scheduled_device_session",
+      "fallback": null,
+      "depends_on": [
+        "BK-07",
+        "BK-08",
+        "DEV-11"
+      ],
+      "source_ids": [
+        "C02",
+        "C12",
+        "T02"
+      ],
+      "competitive_scope_note": "iMazing documents scheduling and external/NAS locations; AnyTrans advertises automatic wireless backups. Specific NAS behavior for AnyTrans was not established."
+    },
+    {
+      "id": "BK-10",
+      "category": "Backups",
+      "title": "Full-device backup restore",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder / Apple Devices",
+          "source_id": "C17",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T08"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Supported official restore handoff first; native restore only after separate proof.",
+      "boundary": "Target data may be replaced; source/newer-OS compatibility and activation constraints apply.",
+      "gate_ids": [
+        "G-RECOVERY",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Exact device/backup/build and loss scope confirmed; restorable recovery path and independently verified outcome required.",
+      "operation_class": "destructive",
+      "fallback": "Finder/Apple Devices restore with the user selecting and authorizing the actual operation.",
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C09",
+        "C12",
+        "C17",
+        "T02",
+        "T08"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-11",
+      "category": "Backups",
+      "title": "Editable backup clones and reusable blueprints",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Research edits only on a new clone with structural validation.",
+      "boundary": "Never modify original; a syntactically valid backup is not proven restorable.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-RECOVERY"
+      ],
+      "acceptance_criteria": "Clone marked modified with change manifest; restoreability only claimed for validated edits/device builds.",
+      "operation_class": "host_write_then_possible_restore",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "BK-12",
+      "category": "Backups",
+      "title": "Download arbitrary iCloud device backups",
+      "phase": "PARKED",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "parked",
+      "competitor_evidence": [
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C14",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "no_justified_route",
+      "candidate_route": "No supported Atlas route established; retain as explicit unmet demand.",
+      "boundary": "Reincubate FAQ says iCloud backup retrieval is unavailable since May 2020; account content is a different source.",
+      "gate_ids": [
+        "G-NO-ROUTE",
+        "G-ACCOUNT"
+      ],
+      "acceptance_criteria": "No fake backup-import success or Apple credential collection; any future route needs new primary evidence.",
+      "operation_class": "unavailable",
+      "fallback": "Restore using Apple-supported device workflow and then create a local backup; account exports remain separate.",
+      "depends_on": [],
+      "source_ids": [
+        "C14",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-01",
+      "category": "Data",
+      "title": "Messages, threads, attachments and print/export",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned backup decoders plus linked payload export.",
+      "boundary": "Readable source coverage and schema limits must be shown; no universal deleted-message recovery claim.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Conversation grouping, dates/time zones, participants and attachment failures match fixtures; PDF/HTML exports retain provenance.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C11",
+        "C12",
+        "C16",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-02",
+      "category": "Data",
+      "title": "Contacts, vCard export and duplicate suggestions",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Read-only contact decoder and standard export.",
+      "boundary": "Merge suggestions are not automatic writes to the phone or cloud address book.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Unicode/multiple labels/photos and ambiguous duplicates preserved; export/import round-trip checked with independent reader.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C09",
+        "C11",
+        "C12",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Contact browse/export appears across these products; 3uTools advertises duplicate merging. Atlas P1 duplicate work remains read-only suggestions."
+    },
+    {
+      "id": "DATA-03",
+      "category": "Data",
+      "title": "Calendars and reminders",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder",
+          "source_id": "C18",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned backup decoders; iCalendar and raw export.",
+      "boundary": "Cloud-only and excluded data may be absent; reminders are not universally writable.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Recurrence, exceptions, time zones and missing fields handled by documented schema support.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C11",
+        "C12",
+        "C16",
+        "C18",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-04",
+      "category": "Data",
+      "title": "Notes and embedded attachments",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned backup or user-export decoder.",
+      "boundary": "Locked notes and app-internal encryption may remain unavailable even with backup password.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Rich text and attachments have fixture coverage; locked/unknown records remain visible with raw path.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C11",
+        "C12",
+        "C16",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-05",
+      "category": "Data",
+      "title": "Call history",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Source-specific backup decoder.",
+      "boundary": "Not carrier records and not necessarily complete; schema and encrypted-backup coverage vary.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Direction, duration, participant and timestamp interpretation are versioned; missing intervals not fabricated.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C11",
+        "C16",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-06",
+      "category": "Data",
+      "title": "Voicemail, voice memos and recordings",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Metadata decoder plus playable payload export.",
+      "boundary": "Payload availability, codec and local/cloud coverage differ; recording content is not reconstructed from metadata.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Metadata-only items remain distinguishable; independent player opens supported exported audio.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C11",
+        "C16",
+        "T02"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-07",
+      "category": "Data",
+      "title": "Safari bookmarks, history and web records",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Versioned backup decoder.",
+      "boundary": "Private browsing and cloud-only/excluded content are not promised; an event is not proof of who visited.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Supported schemas retain original times and source scope; unknown records can be inspected generically.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C16",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-08",
+      "category": "Data",
+      "title": "Health and Apple Watch records in owned sources",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Reincubate advertises Apple Watch data extraction; the wider Health decoder is a conditional Atlas proposal based on available owned sources."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T03"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Opt-in sensitive-data decoder research on authorized backup/export fixtures.",
+      "boundary": "Not live sensor access or medical diagnosis; encryption, scope and formats require independent validation.",
+      "gate_ids": [
+        "G-CRYPTO",
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Only supported records displayed, health units validated, sensitive exports separately selected.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C16",
+        "T02",
+        "T03"
+      ],
+      "competitive_scope_note": "Reincubate advertises Apple Watch data extraction; the wider Health decoder is a conditional Atlas proposal based on available owned sources."
+    },
+    {
+      "id": "DATA-09",
+      "category": "Data",
+      "title": "Password/keychain-related backup data",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T03"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Research only for legitimately decryptable owned backup records.",
+      "boundary": "Backup password does not imply every keychain secret is portable/decryptable; no universal password recovery.",
+      "gate_ids": [
+        "G-CRYPTO",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "A precise supported-record list and separate secret-display/export consent exist; secrets excluded from logs and ordinary reports.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T03"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-10",
+      "category": "Data",
+      "title": "WhatsApp, Viber, WeChat and other app decoders",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C14",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T24"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Per-app versioned backup/export adapters; generic viewers remain fallback.",
+      "boundary": "Per-app encryption and changing schemas limit coverage; decoding is separate from migration/restoration.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Each admitted app/schema has synthetic fixtures and an explicit supported field/media list; unsupported apps never disappear.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C12",
+        "C14",
+        "C16",
+        "T02",
+        "T24"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-11",
+      "category": "Data",
+      "title": "Telegram official archive import",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T15"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Local JSON/HTML export importer with referenced media.",
+      "boundary": "Account export can span devices; not current iPhone cache, all Secret Chats or a reinstallable clone.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Archive scope and export time visible; links and media resolved safely; overlapping archives deduplicate by documented keys.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T15"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-12",
+      "category": "Data",
+      "title": "Meta and additional official archive imports",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T16"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Local Accounts Center/export adapters behind a common import contract.",
+      "boundary": "Local drafts/cache may be excluded; different service exports cannot silently become live device state.",
+      "gate_ids": [
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Unknown record kinds retained, archive traversal blocked, partial-media and format-version outcomes explicit.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T16"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-13",
+      "category": "Data",
+      "title": "App Privacy Report viewer",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T11",
+        "T12"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Bounded NDJSON access/network activity import.",
+      "boundary": "Coverage starts after enabling and has recent-period/private-browser limits; contacted domain is not proof of data theft.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Unknown types retained; overlapping windows deduplicated; sensor and domain events link to original record/source.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T11",
+        "T12"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-14",
+      "category": "Data",
+      "title": "Screen Time/activity companion",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [],
+      "technical_source_ids": [
+        "T13"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Separate optional iPhone companion using eligible Family Controls data access.",
+      "boundary": "iOS 26.4+ and EU customer/Apple Account/entitlement conditions from current documentation; authorization can be revoked.",
+      "gate_ids": [
+        "G-COMPANION",
+        "G-ACCOUNT"
+      ],
+      "acceptance_criteria": "Production-eligible consent/revocation path proven; data stays labelled companion-derived and never presented as USB extraction.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "T13"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "DATA-15",
+      "category": "Data",
+      "title": "Apple account transfer and cloud content lanes",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Vendor iCloud/content claims are separate from Apple Account Data Transfer API, which is an independent conditional Atlas route."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Vendor iCloud/content claims are separate from Apple Account Data Transfer API, which is an independent conditional Atlas route."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Vendor iCloud/content claims are separate from Apple Account Data Transfer API, which is an independent conditional Atlas route."
+        }
+      ],
+      "technical_source_ids": [
+        "T14"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Approved account-transfer scopes and supported user exports; separate source registry.",
+      "boundary": "App Store/account history is not all notifications or all phone data; approval/region and cloud-service scope differ.",
+      "gate_ids": [
+        "G-ACCOUNT",
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Consent, region, delay, scope and account-vs-device identity visible; no unsupported iCloud backup download promise.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C11",
+        "C12",
+        "C16",
+        "T14"
+      ],
+      "competitive_scope_note": "Vendor iCloud/content claims are separate from Apple Account Data Transfer API, which is an independent conditional Atlas route."
+    },
+    {
+      "id": "MEDIA-01",
+      "category": "Media",
+      "title": "Photo/video catalog and safe previews",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C03",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T21"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Native ImageCaptureCore plus backup/import catalog adapters.",
+      "boundary": "Cloud placeholder, thumbnail and local original are distinct; availability is source-specific.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Visible metadata/thumbnail cannot imply original bytes present; item/resource IDs remain stable for operations.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C03",
+        "C09",
+        "C11",
+        "C12",
+        "T21"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-02",
+      "category": "Media",
+      "title": "Grouped media export and metadata preservation",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C03",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T21"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Export available resources with manifest and original metadata.",
+      "boundary": "Live Photos, bursts, edits and sidecars require grouping; exported bytes do not free phone storage.",
+      "gate_ids": [
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Each selected group has a complete/partial receipt and playable resources; original and derivative kept distinct.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C03",
+        "C11",
+        "C12",
+        "T21"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-03",
+      "category": "Media",
+      "title": "Exact duplicates and similar-photo suggestions",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Local hashes and optional bounded perceptual analysis over available files.",
+      "boundary": "Similarity is not identity; no automatic device deletion or claim to inspect cloud-only originals.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Exact/near-duplicate groups separately labelled; user can inspect evidence and exclude members before any later action.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C09"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-04",
+      "category": "Media",
+      "title": "HEIC/HEVC conversion, compression and metadata tools",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C03",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Native codecs where available; local derivatives with explicit settings.",
+      "boundary": "Lossy conversion and metadata removal alter the output; original retained; codec/license coverage verified.",
+      "gate_ids": [
+        "G-EXPORT",
+        "G-OSS"
+      ],
+      "acceptance_criteria": "Independent decode succeeds; dimensions/duration/orientation/colour handling checked; original hash unchanged.",
+      "operation_class": "host_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C03",
+        "C09"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-05",
+      "category": "Media",
+      "title": "Photo import, album operations and selected deletion",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C03",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder",
+          "source_id": "C18",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T21"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Only proven per-operation device interfaces; supported Photos/Finder handoff otherwise.",
+      "boundary": "Import/delete capabilities differ from catalog reads; iCloud sync can propagate deletions; Recently Deleted is not universal undo.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Stable resource-group selection, source conditions and sync consequences previewed; per-item postconditions verified.",
+      "operation_class": "device_write",
+      "fallback": "Use Apple Photos/Finder or the device Photos app for unsupported mutations.",
+      "depends_on": [],
+      "source_ids": [
+        "C03",
+        "C09",
+        "C12",
+        "C18",
+        "T21"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-06",
+      "category": "Media",
+      "title": "Music and playlist browse/export",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C04",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "C18"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Supported media metadata/file route or owned local library import.",
+      "boundary": "Subscription/DRM/cloud-only items may lack exportable audio; do not imply decryption or ownership transfer.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Track metadata/playlists preserved for accessible files; unavailable/protected items listed explicitly.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C04",
+        "C09",
+        "C11",
+        "C12",
+        "T02",
+        "C18"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-07",
+      "category": "Media",
+      "title": "Music import, tags and library synchronization",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C04",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "Finder",
+          "source_id": "C18",
+          "evidence_type": "apple_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "C18"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Admitted media write route or explicit Music/Finder sync handoff.",
+      "boundary": "Sync can replace selections; write route is not established merely because a vendor advertises it.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Exact target/library change preview, duplicate policy and independent playback verification on supported configurations.",
+      "operation_class": "device_write",
+      "fallback": "Music/Finder synchronization for supported user-owned content.",
+      "depends_on": [],
+      "source_ids": [
+        "C04",
+        "C09",
+        "C12",
+        "C18"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "MEDIA-08",
+      "category": "Media",
+      "title": "Books, podcasts, audiobooks and video files",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+        },
+        {
+          "competitor": "Finder",
+          "source_id": "C18",
+          "evidence_type": "apple_documentation",
+          "scope": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+        }
+      ],
+      "technical_source_ids": [
+        "T01",
+        "T02"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Read/export reachable media or participating app Documents; later write gate.",
+      "boundary": "Purchased/protected/cloud-only files may not be transferable; each media family needs its own format scope.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-EXPORT"
+      ],
+      "acceptance_criteria": "Accessible originals and metadata export with receipts; unavailable payload never replaced by a thumbnail or purchase listing.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C09",
+        "C11",
+        "C12",
+        "C18",
+        "T01",
+        "T02"
+      ],
+      "competitive_scope_note": "Listed sources overlap different media families; no assertion that each product supports every protected format or both transfer directions."
+    },
+    {
+      "id": "MEDIA-09",
+      "category": "Media",
+      "title": "Ringtone creation and installation",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C12",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Local user-owned audio trim/convert; separate admitted transfer operation.",
+      "boundary": "Creation can work without a phone; installing a tone still needs a proven current route.",
+      "gate_ids": [
+        "G-EXPORT",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Output duration/codec validated independently; install capability separately tested, otherwise offer supported user handoff.",
+      "operation_class": "host_write_and_conditional_device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C09",
+        "C12"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-01",
+      "category": "Tools",
+      "title": "iPhone-to-iPhone migration planner and execution",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C14",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T02",
+        "T24"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Compare sources/destinations; compose independently admitted transfers or official full restore.",
+      "boundary": "No blanket non-destructive merge of arbitrary data/apps; account, versions and target-loss rules differ.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-RECOVERY"
+      ],
+      "acceptance_criteria": "Every included data family has an exact transfer contract and target impact; unresolved families are excluded visibly.",
+      "operation_class": "device_write",
+      "fallback": "Export-first migration checklist and supported Apple transfer/restore workflow.",
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C09",
+        "C14",
+        "T02",
+        "T24"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-02",
+      "category": "Tools",
+      "title": "Android-to-iPhone migration",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C15",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Import standard archives/files; separate supported destination writers and official migration handoff.",
+      "boundary": "Android acquisition and all-app state transfer are new product scope; vendor broad claims have category/version caveats.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Per-category map, duplicates/conflicts and losses documented; no all-data success label.",
+      "operation_class": "conditional_device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C15"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-03",
+      "category": "Tools",
+      "title": "Screen viewing, capture and recording",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "AnyTrans",
+          "source_id": "C13",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T09",
+        "T10"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "QuickTime/Apple Mirroring handoff first; investigate supported capture integration.",
+      "boundary": "Viewing/recording is not universal remote control; regional/account/hardware restrictions and protected content apply.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Readiness and capture scope explicit; no remote-input promises; unsupported states have working user instructions.",
+      "operation_class": "read",
+      "fallback": "QuickTime connected-device recording or Apple iPhone Mirroring where eligible.",
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "C13",
+        "T09",
+        "T10"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-04",
+      "category": "Tools",
+      "title": "Developer location simulation and performance probes",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "3uTools lists virtual location. Arbitrary-app performance profiling is not established by that claim and remains separate developer research."
+        }
+      ],
+      "technical_source_ids": [
+        "T20"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Opt-in developer-service research and own-app instrumentation.",
+      "boundary": "Different setup/transport from ordinary consumer USB; no global arbitrary-app profiling promise.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Dev eligibility and temporary-state reset documented; operation never runs during ordinary inspection.",
+      "operation_class": "developer_device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "T20"
+      ],
+      "competitive_scope_note": "3uTools lists virtual location. Arbitrary-app performance profiling is not established by that claim and remains separate developer research."
+    },
+    {
+      "id": "TOOL-05",
+      "category": "Tools",
+      "title": "Firmware catalog, download and integrity cache",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T07"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Official IPSW metadata/downloads, cache and hash verification.",
+      "boundary": "Downloading a firmware is not permission or proof it can be installed; signing state can change.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-OSS",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Model/build/signing status source and time shown; downloads verified; no install action is triggered by download.",
+      "operation_class": "network_and_host_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T07"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-06",
+      "category": "Tools",
+      "title": "iOS update, reinstall and restore",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T07",
+        "T08"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Official Apple handoff first; separate pinned restore backend after validation.",
+      "boundary": "No arbitrary unsigned downgrade; upstream update may fall back to erase for missing upgrade variant, which Atlas must refuse silently.",
+      "gate_ids": [
+        "G-RECOVERY",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Update/erase distinction enforced before execution; signing and model verified; interruption recovery tested.",
+      "operation_class": "destructive",
+      "fallback": "Finder/Apple Devices update or recovery workflow.",
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T07",
+        "T08"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-07",
+      "category": "Tools",
+      "title": "Recovery/DFU status and guided recovery",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T07",
+        "T08"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Identify mode where possible; model-specific user instructions.",
+      "boundary": "Entering mode is distinct from flashing; unsupported hardware remains unsupported.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-RECOVERY"
+      ],
+      "acceptance_criteria": "No erase launched by a detect/reconnect action; instructions match model and show exit/recovery route.",
+      "operation_class": "conditional_device_state_change",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T07",
+        "T08"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-08",
+      "category": "Tools",
+      "title": "Rename, sleep, restart and shutdown",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T05",
+        "T06"
+      ],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Per-operation admitted native commands.",
+      "boundary": "Each is a separate mutation; restarting can interrupt backups and unlock readiness.",
+      "gate_ids": [
+        "G-WRITE",
+        "G-LIVE"
+      ],
+      "acceptance_criteria": "Current device identity confirmed, conflicting work blocked, expected disconnect interpreted and postcondition checked.",
+      "operation_class": "device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "T05",
+        "T06"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-09",
+      "category": "Tools",
+      "title": "Device erase and legitimate activation",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T08"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Official supported workflow; enterprise automation is separate.",
+      "boundary": "Activation requires legitimate account/service conditions; not Activation Lock removal.",
+      "gate_ids": [
+        "G-RECOVERY",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Strong exact-device confirmation and separately approved irreversible step; no unattended erase from a scan.",
+      "operation_class": "destructive",
+      "fallback": "Use Apple Settings/Finder and legitimate owner account activation.",
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "T08"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-10",
+      "category": "Tools",
+      "title": "Configuration profile authoring and inspection",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing lists Profile Editor; 3uTools lists profile management. Atlas authoring and installation are separate stages."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "iMazing lists Profile Editor; 3uTools lists profile management. Atlas authoring and installation are separate stages."
+        }
+      ],
+      "technical_source_ids": [
+        "T19"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Offline schema-aware profile editor; installation as separate admitted operation.",
+      "boundary": "A valid profile may change security/network behavior; signed status and actual deployment are separate.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-WRITE",
+        "G-OSS"
+      ],
+      "acceptance_criteria": "Payload validity and effect preview; unknown keys preserved; no silent profile installation.",
+      "operation_class": "host_write_and_conditional_device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "C09",
+        "T19"
+      ],
+      "competitive_scope_note": "iMazing lists Profile Editor; 3uTools lists profile management. Atlas authoring and installation are separate stages."
+    },
+    {
+      "id": "TOOL-11",
+      "category": "Tools",
+      "title": "Supervision, fleet provisioning and kiosk workflows",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T19"
+      ],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Separate managed-device edition/module using eligible management channels.",
+      "boundary": "Enrollment/supervision may require erase and organizational authority; not consumer USB privileges.",
+      "gate_ids": [
+        "G-ACCOUNT",
+        "G-WRITE",
+        "G-RECOVERY"
+      ],
+      "acceptance_criteria": "Managed target set and authority explicit; per-device effects recorded; consumer workflows never auto-enroll.",
+      "operation_class": "managed_device_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08",
+        "T19"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-12",
+      "category": "Tools",
+      "title": "Local CLI, automation and integration API",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C08",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "Headless service reusing the same typed operation and permission contracts.",
+      "boundary": "Automation cannot bypass interactive mutation gates or read unrelated private sources.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-WRITE",
+        "G-OSS"
+      ],
+      "acceptance_criteria": "Read-only JSON commands deterministic; job receipt and exit codes defined; destructive calls require explicit target-scoped authorization.",
+      "operation_class": "host_automation",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C08"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-13",
+      "category": "Tools",
+      "title": "Menu-bar status, reminders and threshold alerts",
+      "phase": "P3",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C02",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "coconutBattery",
+          "source_id": "C10",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "route_candidate",
+      "candidate_route": "User-enabled host agent over validated observations and scheduler events.",
+      "boundary": "No monitoring when source unavailable; high-frequency polling needs measured power impact.",
+      "gate_ids": [
+        "G-LIVE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Stale readings visible; thresholds suppress duplicates; user can stop agent and revoke notifications.",
+      "operation_class": "host_background",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C02",
+        "C10"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-14",
+      "category": "Tools",
+      "title": "Indicators-of-compromise review",
+      "phase": "P4",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "conditional",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C07",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [],
+      "evidence_basis": "conditional_route",
+      "candidate_route": "Opt-in offline analysis of acquired sources against versioned, licensed indicator sets.",
+      "boundary": "An indicator is not proof of compromise; no clean bill of health or spyware-removal claim.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW",
+        "G-OSS"
+      ],
+      "acceptance_criteria": "Every match links to original artifact/time/rule version; false-positive caveats and missing coverage visible.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [
+        "C07"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-15",
+      "category": "Tools",
+      "title": "Carrier/IPCC changes and update-blocking tools",
+      "phase": "PARKED",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "parked",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T19"
+      ],
+      "evidence_basis": "no_justified_route",
+      "candidate_route": "No general consumer route admitted; official Settings/carrier or eligible managed policies only.",
+      "boundary": "Do not disable updates or alter carrier configuration based on toolbox parity alone.",
+      "gate_ids": [
+        "G-NO-ROUTE",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Recorded demand stays discoverable; any future supported route gets exact policy/version and recovery contract.",
+      "operation_class": "unavailable",
+      "fallback": "Official carrier/Settings help; separate eligible managed policy workflow if requested.",
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "T19"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-16",
+      "category": "Tools",
+      "title": "Jailbreak and unrestricted filesystem mode",
+      "phase": "PARKED",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "parked",
+      "competitor_evidence": [
+        {
+          "competitor": "iMazing",
+          "source_id": "C06",
+          "evidence_type": "vendor_documentation",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        },
+        {
+          "competitor": "iExplorer",
+          "source_id": "C11",
+          "evidence_type": "vendor_claim",
+          "scope": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+        }
+      ],
+      "technical_source_ids": [
+        "T22"
+      ],
+      "evidence_basis": "no_justified_route",
+      "candidate_route": "Not part of the consumer product baseline; retain explicit gap in the matrix.",
+      "boundary": "Vendor deeper access is conditional on jailbreak/developer context; trust pairing does not grant root.",
+      "gate_ids": [
+        "G-NO-ROUTE"
+      ],
+      "acceptance_criteria": "No full-filesystem promise, invented directory or jailbreak action in ordinary Atlas workflows.",
+      "operation_class": "unavailable",
+      "fallback": "Browse accessible backup domains and participating app Documents with honest scope.",
+      "depends_on": [],
+      "source_ids": [
+        "C06",
+        "C09",
+        "C11",
+        "T22"
+      ],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "TOOL-17",
+      "category": "Tools",
+      "title": "Password, Activation Lock or DRM bypass promises",
+      "phase": "PARKED",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "parked",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "Reincubate advertises Screen Time passcode reset and 3uTools advertises app downloads without Apple ID. This row does NOT assert either advertises Activation Lock or DRM bypass."
+        },
+        {
+          "competitor": "Reincubate",
+          "source_id": "C16",
+          "evidence_type": "vendor_documentation",
+          "scope": "Reincubate advertises Screen Time passcode reset and 3uTools advertises app downloads without Apple ID. This row does NOT assert either advertises Activation Lock or DRM bypass."
+        }
+      ],
+      "technical_source_ids": [
+        "T03",
+        "T22"
+      ],
+      "evidence_basis": "no_justified_route",
+      "candidate_route": "No bypass feature; known-password backup access and legitimate signed-package workflows only.",
+      "boundary": "Vendor passcode/reset or no-Apple-ID marketing is not evidence of a supported Atlas bypass.",
+      "gate_ids": [
+        "G-NO-ROUTE"
+      ],
+      "acceptance_criteria": "No credential guessing, lock bypass or paid-content unlocking in the deliverable; supported recovery links remain clear.",
+      "operation_class": "unavailable",
+      "fallback": "Apple owner recovery, known backup password, legitimate purchases and app authorization.",
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "C16",
+        "T03",
+        "T22"
+      ],
+      "competitive_scope_note": "Reincubate advertises Screen Time passcode reset and 3uTools advertises app downloads without Apple ID. This row does NOT assert either advertises Activation Lock or DRM bypass."
+    },
+    {
+      "id": "TOOL-18",
+      "category": "Tools",
+      "title": "Battery repair, all-cache cleanup and authenticity verdicts",
+      "phase": "PARKED",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "parked",
+      "competitor_evidence": [
+        {
+          "competitor": "3uTools",
+          "source_id": "C09",
+          "evidence_type": "vendor_claim",
+          "scope": "3uTools advertises verification and a battery-repair tool. Universal cache clearing and guaranteed physical repair/authenticity are broader user aspirations, not established vendor facts."
+        }
+      ],
+      "technical_source_ids": [
+        "T18",
+        "T23"
+      ],
+      "evidence_basis": "no_justified_route",
+      "candidate_route": "Keep exact desired outcomes as research questions; use validated readings and user-guided maintenance.",
+      "boundary": "No established software route to repair physical capacity, remove all caches or certify every part.",
+      "gate_ids": [
+        "G-NO-ROUTE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "No repair/clean-all/original-device success badge; report only observed values and performed actions.",
+      "operation_class": "unavailable",
+      "fallback": "Battery service guidance, app-specific storage controls and documented user hardware checks.",
+      "depends_on": [],
+      "source_ids": [
+        "C09",
+        "T18",
+        "T23"
+      ],
+      "competitive_scope_note": "3uTools advertises verification and a battery-repair tool. Universal cache clearing and guaranteed physical repair/authenticity are broader user aspirations, not established vendor facts."
+    },
+    {
+      "id": "PLUS-01",
+      "category": "Atlas additions",
+      "title": "Provenance and capability coverage everywhere",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [],
+      "evidence_basis": "original_product_proposal",
+      "candidate_route": "Observation model linking value, raw source, time, scope, unit and interpretation.",
+      "boundary": "No claim that competitors lack provenance; no total-phone scan percentage without a denominator.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Every metric and result distinguishes observed, unavailable, denied, stale, manual and derived states.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "PLUS-02",
+      "category": "Atlas additions",
+      "title": "Cross-source search and saved views",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [],
+      "evidence_basis": "original_product_proposal",
+      "candidate_route": "Local source-aware index over selected device snapshots, backup records and imports.",
+      "boundary": "Search availability is bounded by acquired/decoded sources; no implicit personal-folder scan.",
+      "gate_ids": [
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Results show origin/date and jump to source; indexing can be paused/deleted without deleting the source.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "PLUS-03",
+      "category": "Atlas additions",
+      "title": "Unified evidence timeline and change explanations",
+      "phase": "P2",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [],
+      "evidence_basis": "original_product_proposal",
+      "candidate_route": "Comparable observation events and source-specific deltas linked to app/device identity.",
+      "boundary": "Correlation does not prove causation; account events may not map to a particular phone.",
+      "gate_ids": [
+        "G-FIXTURE",
+        "G-REVIEW"
+      ],
+      "acceptance_criteria": "Every claimed change has comparable before/after evidence; incompatible intervals explain why no delta is computed.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "PLUS-04",
+      "category": "Atlas additions",
+      "title": "Operation planner, preservation receipts and outcome audit",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [],
+      "evidence_basis": "original_product_proposal",
+      "candidate_route": "Common plan/export/verify contract; future writes require their separate admitted gate.",
+      "boundary": "A saved export is not a restorable clone or undo; device free-space change differs from selected logical bytes.",
+      "gate_ids": [
+        "G-EXPORT",
+        "G-WRITE"
+      ],
+      "acceptance_criteria": "Planned selection and actual results stay distinct; partial failure and interruption never become all-success.",
+      "operation_class": "host_write",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    },
+    {
+      "id": "PLUS-05",
+      "category": "Atlas additions",
+      "title": "Free local core, open decoders, RU/EN and accessibility",
+      "phase": "P1",
+      "implementation_status": "planned",
+      "atlas_validation": "not_implemented_or_device_tested",
+      "decision": "planned",
+      "competitor_evidence": [],
+      "technical_source_ids": [],
+      "evidence_basis": "original_product_proposal",
+      "candidate_route": "No feature paywall, account requirement or cloud dependency for local core; native UI and documented parser extensions.",
+      "boundary": "Free to users does not mean distribution/testing has zero cost; licenses, trust and maintainability still matter.",
+      "gate_ids": [
+        "G-OSS",
+        "G-FIXTURE"
+      ],
+      "acceptance_criteria": "Core works offline on declared tested systems; keyboard/VoiceOver/RU+EN checks; source and third-party notices accompany release.",
+      "operation_class": "read",
+      "fallback": null,
+      "depends_on": [],
+      "source_ids": [],
+      "competitive_scope_note": "Only the named feature-family overlap was documented; individual subfeatures, tiers, platforms and current-device compatibility were not benchmarked."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# macOS and build output
+.DS_Store
+.build/
+DerivedData/
+build/
+node_modules/
+__pycache__/
+*.pyc
+
+# Credentials and private device material
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
+private/
+local/
+docs/local/
+
+# Original inputs and generated delivery copies remain preserved locally.
+# Git tracks editable planning/research sources and synthetic design assets.
+*.pdf
+*.zip
+research/session-work/

@@ -1,0 +1,12 @@
+{
+  "observed_on": "2026-10-23",
+  "status": "schema_and_compilation_valid",
+  "read_only_validation": true,
+  "project_id": "iphone-atlas-ee42b7d2",
+  "task_count": 6,
+  "task_ids": ["ATLAS-A00", "ATLAS-A01", "ATLAS-A02", "ATLAS-B01A", "ATLAS-O01A", "ATLAS-A03"],
+  "manifest_sha256": "c4cc7883695eebd31a8b5cf58b95a4c81ad4e706e681c35a0a438c4c9ad3e90a",
+  "registered_check_count": 0,
+  "enqueued": false,
+  "native_app_or_device_validation": false
+}

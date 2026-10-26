@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "scope": "planning package and static prototype only",
+  "features": 80,
+  "phase_counts": {
+    "P1": 18,
+    "P2": 25,
+    "P3": 14,
+    "P4": 18,
+    "PARKED": 5
+  },
+  "primary_source_records": 43,
+  "checked_relative_markdown_links": 23,
+  "broken_links": [],
+  "mockups": 22,
+  "prototype_assertions": 48,
+  "prepared_orch_tasks": 6,
+  "baseline_copies_unchanged": true
+}

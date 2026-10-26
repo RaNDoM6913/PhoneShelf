@@ -1,0 +1,200 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Sixteen routes exposed",
+      "status": "passed"
+    },
+    {
+      "name": "overview: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "overview: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "apps: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "apps: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "storage: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "storage: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "documents: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "documents: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "media: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "media: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "backups: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "backups: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "explorer: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "explorer: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "messages: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "messages: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "contacts: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "contacts: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "privacy: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "privacy: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "timeline: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "timeline: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "battery: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "battery: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "transfer: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "transfer: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "toolbox: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "toolbox: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "operations: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "operations: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "settings: one primary heading",
+      "status": "passed"
+    },
+    {
+      "name": "settings: visible route body",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown application sizes stay unavailable",
+      "status": "passed"
+    },
+    {
+      "name": "Scoped app search narrows rows",
+      "status": "passed"
+    },
+    {
+      "name": "Unexposed app documents explain boundary",
+      "status": "passed"
+    },
+    {
+      "name": "Source inspector opens",
+      "status": "passed"
+    },
+    {
+      "name": "Source inspector closes with Escape",
+      "status": "passed"
+    },
+    {
+      "name": "Selected files become a review plan",
+      "status": "passed"
+    },
+    {
+      "name": "Simulation requires its own confirmation",
+      "status": "passed"
+    },
+    {
+      "name": "Receipt explicitly says simulated",
+      "status": "passed"
+    },
+    {
+      "name": "No implemented result claimed",
+      "status": "passed"
+    },
+    {
+      "name": "Disconnected source cannot start device export",
+      "status": "passed"
+    },
+    {
+      "name": "Offline backups remain visible",
+      "status": "passed"
+    },
+    {
+      "name": "Dark theme applies",
+      "status": "passed"
+    },
+    {
+      "name": "Responsive shell avoids document horizontal overflow",
+      "status": "passed"
+    },
+    {
+      "name": "No JavaScript exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "No external network requests",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "scope": "static design prototype only"
+}
